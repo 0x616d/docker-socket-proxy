@@ -1,0 +1,8 @@
+builds:
+  - id: docker-socket-proxy
+    env:
+      - CGO_ENABLED=0
+    flags:
+      - -trimpath 
+    ldflags:
+      - -s -w -buildid=
