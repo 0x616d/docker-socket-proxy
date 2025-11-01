@@ -1,0 +1,223 @@
+Usage of docker-socket-proxy:
+  -allow-build-prune
+    	Allow POST /build/prune
+  -allow-config-create
+    	Allow POST /configs/create
+  -allow-config-delete
+    	Allow DELETE /configs/{id}
+  -allow-config-inspect
+    	Allow GET /configs/{id}
+  -allow-config-list
+    	Allow GET /configs
+  -allow-config-update
+    	Allow POST /configs/{id}/update
+  -allow-container-archive
+    	Allow GET /containers/{id}/archive
+  -allow-container-archive-info
+    	Allow HEAD /containers/{id}/archive
+  -allow-container-attach
+    	Allow POST /containers/{id}/attach
+  -allow-container-attach-websocket
+    	Allow GET /containers/{id}/attach/ws
+  -allow-container-changes
+    	Allow GET /containers/{id}/changes
+  -allow-container-create
+    	Allow POST /containers/create
+  -allow-container-delete
+    	Allow DELETE /containers/{id}
+  -allow-container-exec
+    	Allow POST /containers/{id}/exec
+  -allow-container-export
+    	Allow GET /containers/{id}/export
+  -allow-container-inspect
+    	Allow GET /containers/{id}/json
+  -allow-container-kill
+    	Allow POST /containers/{id}/kill
+  -allow-container-list
+    	Allow GET /containers/json
+  -allow-container-logs
+    	Allow GET /containers/{id}/logs
+  -allow-container-pause
+    	Allow POST /containers/{id}/pause
+  -allow-container-prune
+    	Allow POST /containers/prune
+  -allow-container-rename
+    	Allow POST /containers/{id}/rename
+  -allow-container-resize
+    	Allow POST /containers/{id}/resize
+  -allow-container-restart
+    	Allow POST /containers/{id}/restart
+  -allow-container-start
+    	Allow POST /containers/{id}/start
+  -allow-container-stats
+    	Allow GET /containers/{id}/stats
+  -allow-container-stop
+    	Allow POST /containers/{id}/stop
+  -allow-container-top
+    	Allow GET /containers/{id}/top
+  -allow-container-unpause
+    	Allow POST /containers/{id}/unpause
+  -allow-container-update
+    	Allow POST /containers/{id}/update
+  -allow-container-wait
+    	Allow POST /containers/{id}/wait
+  -allow-distribution-inspect
+    	Allow GET /distribution/{name}/json
+  -allow-exec-inspect
+    	Allow GET /exec/{id}/json
+  -allow-exec-resize
+    	Allow POST /exec/{id}/resize
+  -allow-exec-start
+    	Allow POST /exec/{id}/start
+  -allow-get-plugin-privileges
+    	Allow GET /plugins/privileges
+  -allow-image-build
+    	Allow POST /build
+  -allow-image-commit
+    	Allow POST /commit
+  -allow-image-create
+    	Allow POST /images/create
+  -allow-image-delete
+    	Allow DELETE /images/{name}
+  -allow-image-get
+    	Allow GET /images/{name}/get
+  -allow-image-get-all
+    	Allow GET /images/get
+  -allow-image-history
+    	Allow GET /images/{name}/history
+  -allow-image-inspect
+    	Allow GET /images/{name}/json
+  -allow-image-list
+    	Allow GET /images/json
+  -allow-image-load
+    	Allow POST /images/load
+  -allow-image-prune
+    	Allow POST /images/prune
+  -allow-image-push
+    	Allow POST /images/{name}/push
+  -allow-image-search
+    	Allow GET /images/search
+  -allow-image-tag
+    	Allow POST /images/{name}/tag
+  -allow-network-connect
+    	Allow POST /networks/{id}/connect
+  -allow-network-create
+    	Allow POST /networks/create
+  -allow-network-delete
+    	Allow DELETE /networks/{id}
+  -allow-network-disconnect
+    	Allow POST /networks/{id}/disconnect
+  -allow-network-inspect
+    	Allow GET /networks/{id}
+  -allow-network-list
+    	Allow GET /networks
+  -allow-network-prune
+    	Allow POST /networks/prune
+  -allow-node-delete
+    	Allow DELETE /nodes/{id}
+  -allow-node-inspect
+    	Allow GET /nodes/{id}
+  -allow-node-list
+    	Allow GET /nodes
+  -allow-node-update
+    	Allow POST /nodes/{id}/update
+  -allow-plugin-create
+    	Allow POST /plugins/create
+  -allow-plugin-delete
+    	Allow DELETE /plugins/{name}
+  -allow-plugin-disable
+    	Allow POST /plugins/{name}/disable
+  -allow-plugin-enable
+    	Allow POST /plugins/{name}/enable
+  -allow-plugin-inspect
+    	Allow GET /plugins/{name}/json
+  -allow-plugin-list
+    	Allow GET /plugins
+  -allow-plugin-pull
+    	Allow POST /plugins/pull
+  -allow-plugin-push
+    	Allow POST /plugins/{name}/push
+  -allow-plugin-set
+    	Allow POST /plugins/{name}/set
+  -allow-plugin-upgrade
+    	Allow POST /plugins/{name}/upgrade
+  -allow-put-container-archive
+    	Allow PUT /containers/{id}/archive
+  -allow-secret-create
+    	Allow POST /secrets/create
+  -allow-secret-delete
+    	Allow DELETE /secrets/{id}
+  -allow-secret-inspect
+    	Allow GET /secrets/{id}
+  -allow-secret-list
+    	Allow GET /secrets
+  -allow-secret-update
+    	Allow POST /secrets/{id}/update
+  -allow-service-create
+    	Allow POST /services/create
+  -allow-service-delete
+    	Allow DELETE /services/{id}
+  -allow-service-inspect
+    	Allow GET /services/{id}
+  -allow-service-list
+    	Allow GET /services
+  -allow-service-logs
+    	Allow GET /services/{id}/logs
+  -allow-service-update
+    	Allow POST /services/{id}/update
+  -allow-session
+    	Allow POST /session
+  -allow-swarm-init
+    	Allow POST /swarm/init
+  -allow-swarm-inspect
+    	Allow GET /swarm
+  -allow-swarm-join
+    	Allow POST /swarm/join
+  -allow-swarm-leave
+    	Allow POST /swarm/leave
+  -allow-swarm-unlock
+    	Allow POST /swarm/unlock
+  -allow-swarm-unlockkey
+    	Allow GET /swarm/unlockkey
+  -allow-swarm-update
+    	Allow POST /swarm/update
+  -allow-system-auth
+    	Allow POST /auth
+  -allow-system-data-usage
+    	Allow GET /system/df
+  -allow-system-events
+    	Allow GET /events (default true)
+  -allow-system-info
+    	Allow GET /info (default true)
+  -allow-system-ping
+    	Allow GET /_ping (default true)
+  -allow-system-ping-head
+    	Allow HEAD /_ping (default true)
+  -allow-system-version
+    	Allow GET /version (default true)
+  -allow-task-inspect
+    	Allow GET /tasks/{id}
+  -allow-task-list
+    	Allow GET /tasks
+  -allow-task-logs
+    	Allow GET /tasks/{id}/logs
+  -allow-volume-create
+    	Allow POST /volumes/create
+  -allow-volume-delete
+    	Allow DELETE /volumes/{name}
+  -allow-volume-inspect
+    	Allow GET /volumes/{name}
+  -allow-volume-list
+    	Allow GET /volumes
+  -allow-volume-prune
+    	Allow POST /volumes/prune
+  -allow-volume-update
+    	Allow PUT /volumes/{name}
+  -backend-addr string
+    	 (default "/var/run/docker.sock")
+  -fronted-addr string
+    	 (default ":2375")
+  -healthcheck
+    	perform a healthcheck
+  -log-requests
+    	log requests
