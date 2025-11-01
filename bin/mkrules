@@ -1,0 +1,52 @@
+#!/bin/sh
+
+set -e
+
+p=
+m=
+o=
+
+t='	"allow-%s": {
+		description: "Allow %s",
+		routes: map[string][]string{ "%s": {"%s"} },
+	},
+'
+
+mkrule()
+{
+	_o=$(printf '%s' "$o" |sed -E 's/([a-z])([A-Z])/\1-\2/g' |tr '[:upper:]' '[:lower:]')
+	_m=$(printf '%s' "$m" |tr '[:lower:]' '[:upper:]')
+	_p=$(printf '%s' "$p" |sed 's/{id}/*/;s/{name}/*/')
+	printf "$t" "$_o" "$_m $p" "$_m" "$_p"
+}
+
+printf 'package main
+
+type rule struct {
+	enabled bool
+	description string
+	routes map[string][]string
+}
+
+var rules = map[string]*rule{
+'
+
+while read l
+do
+	case $l in
+		(/*:)
+			p=${l%%:*}
+			;;
+		(get:|put:|post:|head:|delete:)
+			m=${l%%:*}
+			;;
+		(operationId:*)
+			o=${l##*:}
+			o=${o//\ /}
+			o=${o//\"/}
+			mkrule
+			;;
+	esac
+done
+
+printf '}\n'
