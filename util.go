@@ -9,7 +9,7 @@ func hasVersionPrefix(s string) bool {
 }
 
 func removeVersionPrefix(path string) string {
-	if  hasVersionPrefix(path) {
+	if hasVersionPrefix(path) {
 		return "/" + strings.Join(strings.Split(path, "/")[2:], "/")
 	}
 	return path
