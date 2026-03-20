@@ -15,10 +15,14 @@ import (
 	"time"
 )
 
-var logRequests bool
-var doHealthcheck bool
-var backendAddr string
-var frontedAddr string
+var (
+	logRequests   bool
+	doHealthcheck bool
+	backendAddr   string
+	frontedAddr   string
+
+	endpoints strl
+)
 
 func init() {
 	rules["allow-system-events"].enabled = true
@@ -34,6 +38,8 @@ func main() {
 
 	flag.StringVar(&backendAddr, "backend-addr", "/var/run/docker.sock", "")
 	flag.StringVar(&frontedAddr, "fronted-addr", ":2375", "")
+
+	flag.Var(&endpoints, "endpoint", "endpoint to allow (can be used multiple times)")
 
 	for name, rule := range rules {
 		flag.BoolVar(&rule.enabled, name, rule.enabled, rule.description)
@@ -105,6 +111,16 @@ func main() {
 				rt.insert(method, path)
 			}
 		}
+	}
+
+	for _, ep := range endpoints {
+		parts := strings.SplitN(ep, " ", 2)
+		if len(parts) < 2 {
+			continue
+		}
+		method := strings.ToUpper(strings.TrimSpace(parts[0]))
+		path := strings.TrimSpace(parts[1])
+		rt.insert(method, path)
 	}
 
 	s := http.Server{
